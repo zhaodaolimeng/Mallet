@@ -275,14 +275,24 @@ public class DMRTopicModel extends LDAHyper {
 
         InstanceList testing =
             args.length > 2 ? InstanceList.load (new File(args[2])) : null;
+            
+		System.out.println("==============");
+		System.out.println("Modified by Li");
+		System.out.println("==============");
 
         DMRTopicModel lda = new DMRTopicModel (numTopics);
 		lda.setOptimizeInterval(100);
 		lda.setTopicDisplay(100, 10);
+		lda.setRandomSeed(10000);
 		lda.addInstances(training);
 		lda.estimate();
-
+		
 		lda.writeParameters(new File("dmr.parameters"));
 		lda.printState(new File("dmr.state.gz"));
+		
+		//FIXME modified by Li
+		lda.printDocumentTopics(new File("dmr-topics.txt"));
+		lda.printTopWords(new File("dmr-topwords.txt"), 10, true);
+		
     }
 }

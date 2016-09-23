@@ -27,7 +27,7 @@ import cc.mallet.util.Randoms;
  * Latent Dirichlet Allocation with optimized hyperparameters
  * 
  * @author David Mimno, Andrew McCallum
- * @deprecated Use ParallelTopicModel instead, which uses substantially faster data structures even for non-parallel operation.
+// * @deprecated Use ParallelTopicModel instead, which uses substantially faster data structures even for non-parallel operation.
  */
 
 public class LDAHyper implements Serializable {
@@ -976,6 +976,8 @@ public class LDAHyper implements Serializable {
 			pw.print (" \n");
 
 			Arrays.fill(topicCounts, 0);
+			//FIXME
+			pw.flush();
 		}
 		
 	}

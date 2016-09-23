@@ -220,6 +220,7 @@ public class MaxEnt extends Classifier implements Serializable
 				double weight = parameters [li*numFeatures + i];
 				out.println (" "+name+" "+weight);
 			}
+			out.flush();
 		}
 	}
 
