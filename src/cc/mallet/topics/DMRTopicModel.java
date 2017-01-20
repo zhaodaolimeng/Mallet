@@ -281,6 +281,7 @@ public class DMRTopicModel extends LDAHyper {
 		System.out.println("==============");
 
         DMRTopicModel lda = new DMRTopicModel (numTopics);
+        lda.setNumIterations(2000);
 		lda.setOptimizeInterval(100);
 		lda.setTopicDisplay(100, 10);
 		lda.setRandomSeed(10000);
